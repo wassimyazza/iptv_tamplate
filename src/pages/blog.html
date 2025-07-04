@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<nav class="main-nav">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-20 items-center justify-between">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="flex items-center space-x-2">
+                    <img class="h-8 w-auto" src="../../public/img/EVESTV-MAIN-LOGO.svg" alt="VESTV Logo">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="desktop-menu hidden xl:flex">
+                <nav class="flex items-center space-x-2" aria-label="Main navigation">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+
+                    <!-- Packages Dropdown - UPDATED -->
+                    <div class="dropdown-container">
+                        <!-- Packages Link with Icon (unified element) -->
+                        <a href="packages.html" class="packages-link-unified">
+                            <span>Packages</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 dropdown-icon"></i>
+                        </a>
+
+                        <div class="dropdown-menu" role="menu">
+                            <!-- Single Device -->
+                            <div class="submenu-parent">
+                                <a href="#" class="dropdown-item" role="menuitem">
+                                    <span>Single Device</span>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-400"></i>
+                                </a>
+                                <div class="submenu" role="menu">
+                                    <a href="#" class="submenu-item" role="menuitem">24H Trial</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Month</a>
+                                    <a href="#" class="submenu-item" role="menuitem">3 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">6 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Year</a>
+                                    <a href="#" class="submenu-item" role="menuitem">2 Years</a>
+                                </div>
+                            </div>
+
+                            <!-- Dual Devices -->
+                            <div class="submenu-parent">
+                                <a href="#" class="dropdown-item" role="menuitem">
+                                    <span>Dual Devices</span>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-400"></i>
+                                </a>
+                                <div class="submenu" role="menu">
+                                    <a href="#" class="submenu-item" role="menuitem">24H Trial</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Month</a>
+                                    <a href="#" class="submenu-item" role="menuitem">3 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">6 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Year</a>
+                                    <a href="#" class="submenu-item" role="menuitem">2 Years</a>
+                                </div>
+                            </div>
+
+                            <!-- Family Access -->
+                            <div class="submenu-parent">
+                                <a href="#" class="dropdown-item" role="menuitem">
+                                    <span>Family Access</span>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-400"></i>
+                                </a>
+                                <div class="submenu" role="menu">
+                                    <a href="#" class="submenu-item" role="menuitem">24H Trial</a>
+                                    <a href="#" class="submenu-item" role="menuitem">3 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">6 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Year</a>
+                                    <a href="#" class="submenu-item" role="menuitem">2 Years</a>
+                                </div>
+                            </div>
+
+                            <a href="#" class="dropdown-item" role="menuitem">Reseller</a>
+                        </div>
+                    </div>
+
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Desktop Social Icons -->
+            <div class="desktop-menu hidden xl:flex items-center">
+                <a href="#" class="social-icon" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Pinterest">
+                    <i class="fa-brands fa-pinterest relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Reddit">
+                    <i class="fa-brands fa-reddit-alien relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Discord">
+                    <i class="fa-brands fa-discord relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Telegram">
+                    <i class="fa-brands fa-telegram relative z-10"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle" class="mobile-menu-btn xl:hidden" aria-expanded="false"
+                aria-controls="mobile-menu" aria-label="Toggle mobile menu">
+                <i class="icon hamburger-icon fa-solid fa-bars"></i>
+                <i class="icon close-icon fa-solid fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu xl:hidden" role="menu">
+        <div class="px-2 pb-3">
+            <div class="mobile-menu-item">
+                <a href="../../index.html" class="mobile-menu-link">Home</a>
+            </div>
+
+            <div class="mobile-menu-item">
+                <a href="about.html" class="mobile-menu-link active">About</a>
+            </div>
+
+            <!-- Mobile Packages Section - UPDATED -->
+            <div class="mobile-menu-item">
+                <a href="packages.html" class="mobile-menu-link">Packages</a>
+            </div>
+
+            <div class="mobile-menu-item">
+                <button class="mobile-dropdown-btn" data-target="packages-submenu" aria-expanded="false">
+                    <span>All Package Categories</span>
+                    <i class="mobile-dropdown-icon fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div id="packages-submenu" class="mobile-submenu">
+                    <!-- Single Device -->
+                    <div class="py-2">
+                        <button class="mobile-dropdown-btn text-base font-medium text-gray-600"
+                            data-target="single-device-submenu" style="padding-left: 2rem;">
+                            <span>Single Device</span>
+                            <i class="mobile-dropdown-icon fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                        <div id="single-device-submenu" class="mobile-nested-submenu">
+                            <a href="#" class="mobile-nested-item">24H Trial</a>
+                            <a href="#" class="mobile-nested-item">1 Month</a>
+                            <a href="#" class="mobile-nested-item">3 Months</a>
+                            <a href="#" class="mobile-nested-item">6 Months</a>
+                            <a href="#" class="mobile-nested-item">1 Year</a>
+                            <a href="#" class="mobile-nested-item">2 Years</a>
+                        </div>
+                    </div>
+
+                    <!-- Dual Devices -->
+                    <div class="py-2">
+                        <button class="mobile-dropdown-btn text-base font-medium text-gray-600"
+                            data-target="dual-devices-submenu" style="padding-left: 2rem;">
+                            <span>Dual Devices</span>
+                            <i class="mobile-dropdown-icon fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                        <div id="dual-devices-submenu" class="mobile-nested-submenu">
+                            <a href="#" class="mobile-nested-item">24H Trial</a>
+                            <a href="#" class="mobile-nested-item">1 Month</a>
+                            <a href="#" class="mobile-nested-item">3 Months</a>
+                            <a href="#" class="mobile-nested-item">6 Months</a>
+                            <a href="#" class="mobile-nested-item">1 Year</a>
+                            <a href="#" class="mobile-nested-item">2 Years</a>
+                        </div>
+                    </div>
+
+                    <!-- Family Access -->
+                    <div class="py-2">
+                        <button class="mobile-dropdown-btn text-base font-medium text-gray-600"
+                            data-target="family-access-submenu" style="padding-left: 2rem;">
+                            <span>Family Access</span>
+                            <i class="mobile-dropdown-icon fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                        <div id="family-access-submenu" class="mobile-nested-submenu">
+                            <a href="#" class="mobile-nested-item">24H Trial</a>
+                            <a href="#" class="mobile-nested-item">3 Months</a>
+                            <a href="#" class="mobile-nested-item">6 Months</a>
+                            <a href="#" class="mobile-nested-item">1 Year</a>
+                            <a href="#" class="mobile-nested-item">2 Years</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="mobile-submenu-item">Reseller</a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-item">
+                <a href="tutorials.html" class="mobile-menu-link">Tutorials</a>
+            </div>
+
+            <div class="mobile-menu-item">
+                <a href="blog.html" class="mobile-menu-link">Blog</a>
+            </div>
+
+            <div class="mobile-menu-item">
+                <a href="contact.html" class="mobile-menu-link">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section id="blog-hero" class="relative bg-emerald-500">
+        <div class="mx-auto max-w-4xl px-6 py-24 text-center sm:py-32 lg:px-8">
+            <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl">EVESTV Blog</h1>
+            <p class="mt-6 text-lg leading-8 text-white/80">Latest news, guides, blog posts and insights about IPTV
+                streaming.</p>
+
+            <div class="relative mx-auto mt-12 max-w-3xl">
+                <div id="blog-hero-dots" class="absolute inset-x-0 -top-12 -bottom-12 -z-10"></div>
+
+                <form action="#" method="GET" class="relative">
+                    <label for="search-blog" class="sr-only">Search</label>
+                    <input id="search-blog" name="search" type="search" placeholder="Search..."
+                        class="w-full rounded-md border-0 bg-white py-4 pl-6 pr-16 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white">
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                        <button type="submit" class="p-2 text-gray-400 hover:text-gray-600">
+                            <span class="sr-only">Search</span>
+                            <i class="fa-solid fa-magnifying-glass h-5 w-5"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog-posts-grid" class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
+
+                <!-- Post 1: Chromecast -->
+                <article
+                    class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-64 shadow-lg lg:col-span-3">
+                    <img src="https://images.unsplash.com/photo-1614036125424-6595e14a4a5e?q=80&w=2187&auto=format&fit=crop"
+                        alt="Google Chromecast device in its packaging"
+                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40"></div>
+                    <div class="absolute top-6 left-6 z-10">
+                        <span
+                            class="inline-block rounded-md bg-emerald-500 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Tutorials</span>
+                    </div>
+                    <p class="pointer-events-none absolute bottom-8 left-8 right-8 text-7xl font-bold text-white opacity-10 truncate"
+                        aria-hidden="true">Set Up IPTV on Chromecast: Perfect</p>
+                    <h3 class="z-10 mt-3 text-2xl font-bold leading-tight text-white">
+                        <a href="#"><span class="absolute inset-0"></span>Set Up IPTV on Chromecast: Perfect Streaming
+                            Guide [2024]</a>
+                    </h3>
+                    <div class="z-10 mt-3 flex items-center text-sm text-white/80">
+                        <p>7 months ago</p>
+                    </div>
+                </article>
+
+                <!-- Post 2: MAG Box -->
+                <article
+                    class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-64 shadow-lg lg:col-span-3">
+                    <img src="https://images.unsplash.com/photo-1607968545541-c23f260407f3?q=80&w=2186&auto=format&fit=crop"
+                        alt="MAG IPTV Box"
+                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40"></div>
+                    <div class="absolute top-6 left-6 z-10">
+                        <span
+                            class="inline-block rounded-md bg-emerald-500 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Tutorials</span>
+                    </div>
+                    <p class="pointer-events-none absolute bottom-8 left-8 right-8 text-7xl font-bold text-white opacity-10 truncate"
+                        aria-hidden="true">Perfect Guide: How to Set Up IPTV</p>
+                    <h3 class="z-10 mt-3 text-2xl font-bold leading-tight text-white">
+                        <a href="#"><span class="absolute inset-0"></span>Perfect Guide: How to Set Up IPTV on MAG Box –
+                            3 Easy Steps [2024]</a>
+                    </h3>
+                    <div class="z-10 mt-3 flex items-center text-sm text-white/80">
+                        <p>7 months ago</p>
+                    </div>
+                </article>
+
+                <!-- Post 3: MacOS -->
+                <article
+                    class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-64 shadow-lg lg:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2826&auto=format&fit=crop"
+                        alt="Apple MacBook with IPTV interface"
+                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40"></div>
+                    <div class="absolute top-6 left-6 z-10">
+                        <span
+                            class="inline-block rounded-md bg-emerald-500 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Tutorials</span>
+                    </div>
+                    <p class="pointer-events-none absolute bottom-8 left-8 right-8 text-6xl font-bold text-white opacity-10 truncate"
+                        aria-hidden="true">Perfect Guide: How to Set Up IPTV</p>
+                    <h3 class="z-10 mt-3 text-xl font-bold leading-tight text-white">
+                        <a href="#"><span class="absolute inset-0"></span>Perfect Guide: How to Set Up IPTV on MacOS – 4
+                            Easy Steps [2024]</a>
+                    </h3>
+                </article>
+
+                <!-- Post 4: iPhone -->
+                <article
+                    class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-64 shadow-lg lg:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1592188676242-ab33b5993b45?q=80&w=2187&auto=format&fit=crop"
+                        alt="iPhone homescreen with apps"
+                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40"></div>
+                    <div class="absolute top-6 left-6 z-10">
+                        <span
+                            class="inline-block rounded-md bg-emerald-500 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Tutorials</span>
+                    </div>
+                    <p class="pointer-events-none absolute bottom-8 left-8 right-8 text-6xl font-bold text-white opacity-10 truncate"
+                        aria-hidden="true">Perfect Guide: How to Set Up IPTV on iPhone and iPad</p>
+                    <h3 class="z-10 mt-3 text-xl font-bold leading-tight text-white">
+                        <a href="#"><span class="absolute inset-0"></span>Perfect Guide: How to Set Up IPTV on iPhone
+                            and iPad – 3 Amazing Apps [2024]</a>
+                    </h3>
+                </article>
+
+                <!-- Post 5: Smart TV -->
+                <article
+                    class="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-64 shadow-lg lg:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f82d72?q=80&w=2070&auto=format&fit=crop"
+                        alt="Smart TV with a blue screen"
+                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40"></div>
+                    <div class="absolute top-6 left-6 z-10">
+                        <span
+                            class="inline-block rounded-md bg-emerald-500 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Tutorials</span>
+                    </div>
+                    <p class="pointer-events-none absolute bottom-8 left-8 right-8 text-6xl font-bold text-white opacity-10 truncate"
+                        aria-hidden="true">Perfect Guide: How to Set Up IPTV on Smart TV</p>
+                    <h3 class="z-10 mt-3 text-xl font-bold leading-tight text-white">
+                        <a href="#"><span class="absolute inset-0"></span>Perfect Guide: How to Set Up IPTV on Smart TV
+                            – 5 Amazing Methods [2024]</a>
+                    </h3>
+                </article>
+
+            </div>
+            <div class="mt-16 text-center">
+                <a href="#"
+                    class="inline-block rounded-md bg-emerald-500 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">Load
+                    More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="still-have-questions-section">
+        <div class="bg-emerald-500 py-16 sm:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-4xl text-center">
+                    <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                        Still have questions? We're here to help 24/7
+                    </h2>
+                    <p class="mt-4 text-lg leading-8 text-emerald-100">
+                        The ideal domain instantly communicates your online purpose and highlights your awesomeness.
+                        Discover the perfect domain using our search bar.
+                    </p>
+                </div>
+
+                <div class="mt-16 mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
+                    <!-- Email Support Card -->
+                    <div class="rounded-2xl bg-white p-6">
+                        <a href="#"
+                            class="email-support-button flex w-full items-center justify-center gap-x-3 rounded-lg px-6 py-4 text-center text-base font-semibold text-white shadow-sm">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Email Support</span>
+                        </a>
+                    </div>
+                    <!-- WhatsApp Support Card -->
+                    <div class="rounded-2xl bg-white p-6">
+                        <a href="#"
+                            class="whatsapp-support-button flex w-full items-center justify-center gap-x-3 rounded-lg px-6 py-4 text-center text-base font-semibold text-white shadow-sm">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp Support</span>
+                        </a>
+                    </div>
+                    <!-- Telegram Support Card -->
+                    <div class="rounded-2xl bg-white p-6">
+                        <a href="#"
+                            class="telegram-support-button flex w-full items-center justify-center gap-x-3 rounded-lg px-6 py-4 text-center text-base font-semibold text-white shadow-sm">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Telegram Support</span>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="mt-8 text-center text-sm text-emerald-100">Average response time: under 5 minutes</p>
+            </div>
+        </div>
+
+        <!-- Yellow Part -->
+        <div class="bg-yellow-400 py-8">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col items-center justify-center gap-2">
+                    <p class="text-sm font-semibold text-gray-800">Rated 5 / 5 on Trustpilot</p>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-star text-emerald-500 text-xl"></i>
+                        <span class="text-lg font-bold text-gray-800">Trustpilot</span>
+                        <div class="flex items-center gap-px">
+                            <div class="bg-emerald-500 p-1"><i class="fa-solid fa-star text-white text-xs"></i></div>
+                            <div class="bg-emerald-500 p-1"><i class="fa-solid fa-star text-white text-xs"></i></div>
+                            <div class="bg-emerald-500 p-1"><i class="fa-solid fa-star text-white text-xs"></i></div>
+                            <div class="bg-emerald-500 p-1"><i class="fa-solid fa-star text-white text-xs"></i></div>
+                            <div class="bg-emerald-500 p-1"><i class="fa-solid fa-star text-white text-xs"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="eves-tv-footer" class="bg-teal-50">
+        <div class="mx-auto max-w-screen-xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
+
+                <!-- Logo and Description -->
+                <div class="lg:col-span-4">
+                    <a href="#">
+                        <img class="h-8"
+                            src="https://assets.website-files.com/64b1457340618825841e4115/64b1457340618825841e411e_vestv-logo.svg"
+                            alt="EVESTV Logo">
+                    </a>
+                    <p class="mt-6 max-w-md text-base leading-relaxed text-gray-600">
+                        Experience premium entertainment with EVESTV. 30k+ channels in 4K quality, including Sports,
+                        international content, and PPV events.
+                    </p>
+                </div>
+
+                <!-- Links Grid -->
+                <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-5">
+                    <div>
+                        <p class="font-semibold text-gray-500">Quick Links</p>
+                        <ul class="mt-6 space-y-4 text-sm">
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Home</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Packages</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Products</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Start trial</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-500">Support</p>
+                        <ul class="mt-6 space-y-4 text-sm">
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">About us</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Help</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Installation
+                                    Guide</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-500">Legal</p>
+                        <ul class="mt-6 space-y-4 text-sm">
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Privacy Policy</a>
+                            </li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Refund Policy</a>
+                            </li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Cookie Policy</a>
+                            </li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Terms of use</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Subscribe Form -->
+                <div class="lg:col-span-3">
+                    <form class="space-y-4">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email"
+                            class="w-full rounded-lg border-gray-200 bg-white p-3 text-sm shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
+                        <button type="submit"
+                            class="w-full rounded-lg bg-emerald-500 px-5 py-3 font-medium text-white transition hover:bg-emerald-600">
+                            Subscribe
+                        </button>
+                    </form>
+                    <div class="mt-4 flex justify-start space-x-5 text-gray-700">
+                        <a href="#" class="transition hover:text-emerald-500"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i
+                                class="fa-brands fa-reddit-alien"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i
+                                class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    © 2025 <a href="#" class="text-emerald-500 transition hover:text-emerald-600">EVESTV</a>. All rights
+                    reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    const isOpen = mobileMenu.classList.contains('open');
+
+                    if (isOpen) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                });
+            }
+
+            // Mobile dropdown toggles
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const submenu = document.getElementById(targetId);
+                    const icon = this.querySelector('.mobile-dropdown-icon');
+
+                    if (submenu && icon) {
+                        const isOpen = submenu.classList.contains('open');
+
+                        if (isOpen) {
+                            submenu.classList.remove('open');
+                            this.classList.remove('active');
+                            this.setAttribute('aria-expanded', 'false');
+                        } else {
+                            submenu.classList.add('open');
+                            this.classList.add('active');
+                            this.setAttribute('aria-expanded', 'true');
+                        }
+                    }
+                });
+            });
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (mobileMenuToggle && mobileMenu &&
+                    !mobileMenuToggle.contains(e.target) &&
+                    !mobileMenu.contains(e.target) &&
+                    mobileMenu.classList.contains('open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            function openMobileMenu() {
+                if (mobileMenu && mobileMenuToggle) {
+                    mobileMenu.classList.add('open');
+                    mobileMenuToggle.classList.add('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeMobileMenu() {
+                if (mobileMenu && mobileMenuToggle) {
+                    mobileMenu.classList.remove('open');
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+
+                    // Close all submenus
+                    document.querySelectorAll('.mobile-submenu, .mobile-nested-submenu').forEach(submenu => {
+                        submenu.classList.remove('open');
+                    });
+                    document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-expanded', 'false');
+                    });
+                }
+            }
+
+            // Desktop dropdown accessibility
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                const button = container.querySelector('.nav-link');
+                const menu = container.querySelector('.dropdown-menu');
+
+                if (button && menu) {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                    });
+
+                    button.addEventListener('keydown', function (e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                            this.setAttribute('aria-expanded', !isExpanded);
+                        }
+                    });
+                }
+            });
+
+            // Plan tabs functionality
+            const tabs = document.querySelectorAll('.plan-tab-button');
+            const planContents = {
+                single: document.getElementById('single-plans'),
+                dual: document.getElementById('dual-plans'),
+                family: document.getElementById('family-plans')
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Deactivate all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active-tab', 'bg-emerald-500', 'text-white');
+                        t.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+
+                    // Activate clicked tab
+                    tab.classList.add('active-tab', 'bg-emerald-500', 'text-white');
+                    tab.classList.remove('bg-gray-200', 'text-gray-700');
+
+                    const planToShow = tab.dataset.plan;
+
+                    // Hide all plan contents
+                    Object.values(planContents).forEach(content => {
+                        if (content) {
+                            content.style.display = 'none';
+                        }
+                    });
+
+                    // Show the selected plan content
+                    if (planContents[planToShow]) {
+                        planContents[planToShow].style.display = 'grid';
+                    }
+                });
+            });
+
+            // Logo scrolling functionality
+            const logosData = [
+                { src: '../../public/img/icons-animation/mag.svg', alt: 'Xbox' },
+                { src: '../../public/img/icons-animation/samsungsmarttv.svg', alt: 'Kodi' },
+                { src: '../../public/img/icons-animation/firetv.svg', alt: 'Linux' },
+                { src: '../../public/img/icons-animation/apple.svg', alt: 'Windows' },
+                { src: '../../public/img/icons-animation/tv.svg', alt: 'IPTV Smarters' },
+                { src: '../../public/img/icons-animation/video.svg', alt: 'TiviMate' },
+                { src: '../../public/img/icons-animation/android.svg', alt: 'Android TV' },
+                { src: '../../public/img/icons-animation/firetv.svg', alt: 'Router' },
+                { src: '../../public/img/icons-animation/samsung.svg', alt: 'Samsung' },
+                { src: '../../public/img/icons-animation/appletv.svg', alt: 'Apple TV' },
+                { src: '../../public/img/icons-animation/mag.svg', alt: 'MAG' },
+                { src: '../../public/img/icons-animation/samsungsmarttv.svg', alt: 'Samsung Smart TV' },
+                { src: '../../public/img/icons-animation/LGtv.svg', alt: 'LG' },
+                { src: '../../public/img/icons-animation/roki.svg', alt: 'Roku' },
+                { src: '../../public/img/icons-animation/apple.svg', alt: 'Apple' },
+                { src: '../../public/img/icons-animation/nvidia.svg', alt: 'Nvidia' }
+            ];
+
+            const track = document.getElementById('logo-track-container');
+            if (track) {
+                // Duplicate logos to ensure the track is always full and animation is seamless
+                const allLogos = [...logosData, ...logosData];
+
+                allLogos.forEach(logo => {
+                    const img = document.createElement('img');
+                    img.src = logo.src;
+                    img.alt = logo.alt;
+                    img.className = 'logo-item';
+                    track.appendChild(img);
+                });
+
+                const animationDuration = 500; // Must match CSS transition duration
+                const pauseDuration = 500;     // The pause between slides
+
+                function startScrolling() {
+                    const firstItem = track.querySelector('.logo-item');
+                    if (!firstItem) return;
+
+                    // 1. Start the slide animation
+                    const itemWidth = firstItem.offsetWidth + parseFloat(getComputedStyle(firstItem).marginRight);
+                    track.style.transform = `translateX(-${itemWidth}px)`;
+
+                    // 2. After the slide is finished, reset the state
+                    setTimeout(() => {
+                        // No transition for the reset/reorder
+                        track.style.transition = 'none';
+                        // Move the first (now hidden) item to the end
+                        track.appendChild(firstItem);
+                        // Reset the track position instantly
+                        track.style.transform = 'translateX(0)';
+                        // Force a reflow to apply the reset immediately before re-enabling transition
+                        track.offsetHeight;
+                        // Re-enable the transition for the next slide
+                        track.style.transition = 'transform 0.5s ease-in-out';
+                    }, animationDuration);
+                }
+
+                // Start the animation loop after an initial pause
+                setInterval(startScrolling, animationDuration + pauseDuration);
+            }
+
+            // FAQ Accordion functionality (for #faq-section if it exists)
+            const accordionItems = document.querySelectorAll('#faq-section .accordion-item');
+
+            if (accordionItems.length > 0) {
+                // Function to close all items
+                const closeAllItems = () => {
+                    accordionItems.forEach(item => {
+                        const panel = item.querySelector('.accordion-panel');
+                        const icon = item.querySelector('.accordion-icon');
+                        if (panel) panel.style.maxHeight = null;
+                        if (icon) {
+                            icon.classList.remove('fa-chevron-up');
+                            icon.classList.add('fa-chevron-down');
+                            icon.classList.remove('open');
+                        }
+                    });
+                };
+
+                // Set the first item to be open by default
+                const firstItem = accordionItems[0];
+                if (firstItem) {
+                    const firstPanel = firstItem.querySelector('.accordion-panel');
+                    const firstIcon = firstItem.querySelector('.accordion-icon');
+                    if (firstPanel) firstPanel.style.maxHeight = firstPanel.scrollHeight + 'px';
+                    if (firstIcon) {
+                        firstIcon.classList.remove('fa-chevron-down');
+                        firstIcon.classList.add('fa-chevron-up');
+                        firstIcon.classList.add('open');
+                    }
+                }
+
+                accordionItems.forEach(item => {
+                    const trigger = item.querySelector('.accordion-trigger');
+                    const panel = item.querySelector('.accordion-panel');
+                    const icon = item.querySelector('.accordion-icon');
+
+                    if (trigger && panel && icon) {
+                        trigger.addEventListener('click', () => {
+                            const isCurrentlyOpen = panel.style.maxHeight && panel.style.maxHeight !== '0px';
+
+                            // Always close all items first
+                            closeAllItems();
+
+                            // If the clicked item was not open, open it
+                            if (!isCurrentlyOpen) {
+                                panel.style.maxHeight = panel.scrollHeight + 'px';
+                                icon.classList.remove('fa-chevron-down');
+                                icon.classList.add('fa-chevron-up');
+                                icon.classList.add('open');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // FAQ Reseller Section functionality (corrected version)
+            const faqItems = document.querySelectorAll('#faq-reseller-section .faq-item');
+
+            faqItems.forEach(item => {
+                const header = item.querySelector('.faq-header');
+                const content = item.querySelector('.faq-content');
+                const icon = item.querySelector('.faq-icon');
+
+                if (header && content && icon) {
+                    header.addEventListener('click', function () {
+                        const isExpanded = item.dataset.expanded === 'true';
+
+                        if (isExpanded) {
+                            // Close this item
+                            content.classList.add('hidden');
+                            icon.textContent = '+';
+                            item.dataset.expanded = 'false';
+
+                            // Change colors to yellow
+                            header.classList.remove('bg-green-500');
+                            header.classList.add('bg-yellow-400');
+                            content.classList.remove('bg-green-500');
+                            content.classList.add('bg-yellow-400');
+
+                            // Change text color
+                            const h3 = header.querySelector('h3');
+                            const p = content.querySelector('p');
+
+                            if (h3) {
+                                h3.classList.remove('text-white');
+                                h3.classList.add('text-black');
+                            }
+
+                            icon.classList.remove('text-white');
+                            icon.classList.add('text-black');
+
+                            if (p) {
+                                p.classList.remove('text-white');
+                                p.classList.add('text-black');
+                            }
+                        } else {
+                            // Close all other items first
+                            faqItems.forEach(otherItem => {
+                                if (otherItem !== item && otherItem.dataset.expanded === 'true') {
+                                    const otherContent = otherItem.querySelector('.faq-content');
+                                    const otherIcon = otherItem.querySelector('.faq-icon');
+                                    const otherHeader = otherItem.querySelector('.faq-header');
+
+                                    if (otherContent && otherIcon && otherHeader) {
+                                        otherContent.classList.add('hidden');
+                                        otherIcon.textContent = '+';
+                                        otherItem.dataset.expanded = 'false';
+
+                                        // Change to yellow
+                                        otherHeader.classList.remove('bg-green-500');
+                                        otherHeader.classList.add('bg-yellow-400');
+                                        otherContent.classList.remove('bg-green-500');
+                                        otherContent.classList.add('bg-yellow-400');
+
+                                        // Change text color
+                                        const otherH3 = otherHeader.querySelector('h3');
+                                        const otherP = otherContent.querySelector('p');
+
+                                        if (otherH3) {
+                                            otherH3.classList.remove('text-white');
+                                            otherH3.classList.add('text-black');
+                                        }
+
+                                        otherIcon.classList.remove('text-white');
+                                        otherIcon.classList.add('text-black');
+
+                                        if (otherP) {
+                                            otherP.classList.remove('text-white');
+                                            otherP.classList.add('text-black');
+                                        }
+                                    }
+                                }
+                            });
+
+                            // Open this item
+                            content.classList.remove('hidden');
+                            icon.textContent = '−';
+                            item.dataset.expanded = 'true';
+
+                            // Change colors to green
+                            header.classList.remove('bg-yellow-400');
+                            header.classList.add('bg-green-500');
+                            content.classList.remove('bg-yellow-400');
+                            content.classList.add('bg-green-500');
+
+                            // Change text color
+                            const h3 = header.querySelector('h3');
+                            const p = content.querySelector('p');
+
+                            if (h3) {
+                                h3.classList.remove('text-black');
+                                h3.classList.add('text-white');
+                            }
+
+                            icon.classList.remove('text-black');
+                            icon.classList.add('text-white');
+
+                            if (p) {
+                                p.classList.remove('text-black');
+                                p.classList.add('text-white');
+                            }
+                        }
+                    });
+                }
+            });
+
+
+            const planToggle = document.getElementById('plan-toggle');
+            if (!planToggle) return;
+
+            const buttons = planToggle.querySelectorAll('.plan-button');
+            const planSets = document.querySelectorAll('.plan-set');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const plan = this.getAttribute('data-plan');
+
+                    // Update button styles
+                    buttons.forEach(btn => {
+                        btn.classList.remove('bg-emerald-600', 'text-white');
+                        btn.classList.add('bg-transparent', 'text-gray-700');
+                    });
+                    this.classList.add('bg-emerald-600', 'text-white');
+                    this.classList.remove('bg-transparent', 'text-gray-700');
+
+                    // Update visible plan set
+                    planSets.forEach(set => {
+                        if (set.id === `${plan}-device-plans`) {
+                            set.classList.remove('hidden');
+                        } else {
+                            set.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

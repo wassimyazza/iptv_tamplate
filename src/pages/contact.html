@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<nav class="main-nav">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-20 items-center justify-between">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="flex items-center space-x-2">
+                    <img class="h-8 w-auto" src="../../public/img/EVESTV-MAIN-LOGO.svg" alt="VESTV Logo">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="desktop-menu hidden xl:flex">
+                <nav class="flex items-center space-x-2" aria-label="Main navigation">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+
+                    <!-- Packages Dropdown - UPDATED -->
+                    <div class="dropdown-container">
+                        <!-- Packages Link with Icon (unified element) -->
+                        <a href="packages.html" class="packages-link-unified">
+                            <span>Packages</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 dropdown-icon"></i>
+                        </a>
+
+                        <div class="dropdown-menu" role="menu">
+                            <!-- Single Device -->
+                            <div class="submenu-parent">
+                                <a href="#" class="dropdown-item" role="menuitem">
+                                    <span>Single Device</span>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-400"></i>
+                                </a>
+                                <div class="submenu" role="menu">
+                                    <a href="#" class="submenu-item" role="menuitem">24H Trial</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Month</a>
+                                    <a href="#" class="submenu-item" role="menuitem">3 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">6 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Year</a>
+                                    <a href="#" class="submenu-item" role="menuitem">2 Years</a>
+                                </div>
+                            </div>
+
+                            <!-- Dual Devices -->
+                            <div class="submenu-parent">
+                                <a href="#" class="dropdown-item" role="menuitem">
+                                    <span>Dual Devices</span>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-400"></i>
+                                </a>
+                                <div class="submenu" role="menu">
+                                    <a href="#" class="submenu-item" role="menuitem">24H Trial</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Month</a>
+                                    <a href="#" class="submenu-item" role="menuitem">3 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">6 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Year</a>
+                                    <a href="#" class="submenu-item" role="menuitem">2 Years</a>
+                                </div>
+                            </div>
+
+                            <!-- Family Access -->
+                            <div class="submenu-parent">
+                                <a href="#" class="dropdown-item" role="menuitem">
+                                    <span>Family Access</span>
+                                    <i class="fa-solid fa-chevron-right ml-auto text-xs text-gray-400"></i>
+                                </a>
+                                <div class="submenu" role="menu">
+                                    <a href="#" class="submenu-item" role="menuitem">24H Trial</a>
+                                    <a href="#" class="submenu-item" role="menuitem">3 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">6 Months</a>
+                                    <a href="#" class="submenu-item" role="menuitem">1 Year</a>
+                                    <a href="#" class="submenu-item" role="menuitem">2 Years</a>
+                                </div>
+                            </div>
+
+                            <a href="#" class="dropdown-item" role="menuitem">Reseller</a>
+                        </div>
+                    </div>
+
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Desktop Social Icons -->
+            <div class="desktop-menu hidden xl:flex items-center">
+                <a href="#" class="social-icon" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Pinterest">
+                    <i class="fa-brands fa-pinterest relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Reddit">
+                    <i class="fa-brands fa-reddit-alien relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Discord">
+                    <i class="fa-brands fa-discord relative z-10"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Telegram">
+                    <i class="fa-brands fa-telegram relative z-10"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle" class="mobile-menu-btn xl:hidden" aria-expanded="false"
+                aria-controls="mobile-menu" aria-label="Toggle mobile menu">
+                <i class="icon hamburger-icon fa-solid fa-bars"></i>
+                <i class="icon close-icon fa-solid fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu xl:hidden" role="menu">
+        <div class="px-2 pb-3">
+            <div class="mobile-menu-item">
+                <a href="../../index.html" class="mobile-menu-link">Home</a>
+            </div>
+
+            <div class="mobile-menu-item">
+                <a href="about.html" class="mobile-menu-link active">About</a>
+            </div>
+
+            <!-- Mobile Packages Section - UPDATED -->
+            <div class="mobile-menu-item">
+                <a href="packages.html" class="mobile-menu-link">Packages</a>
+            </div>
+
+            <div class="mobile-menu-item">
+                <button class="mobile-dropdown-btn" data-target="packages-submenu" aria-expanded="false">
+                    <span>All Package Categories</span>
+                    <i class="mobile-dropdown-icon fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div id="packages-submenu" class="mobile-submenu">
+                    <!-- Single Device -->
+                    <div class="py-2">
+                        <button class="mobile-dropdown-btn text-base font-medium text-gray-600"
+                            data-target="single-device-submenu" style="padding-left: 2rem;">
+                            <span>Single Device</span>
+                            <i class="mobile-dropdown-icon fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                        <div id="single-device-submenu" class="mobile-nested-submenu">
+                            <a href="#" class="mobile-nested-item">24H Trial</a>
+                            <a href="#" class="mobile-nested-item">1 Month</a>
+                            <a href="#" class="mobile-nested-item">3 Months</a>
+                            <a href="#" class="mobile-nested-item">6 Months</a>
+                            <a href="#" class="mobile-nested-item">1 Year</a>
+                            <a href="#" class="mobile-nested-item">2 Years</a>
+                        </div>
+                    </div>
+
+                    <!-- Dual Devices -->
+                    <div class="py-2">
+                        <button class="mobile-dropdown-btn text-base font-medium text-gray-600"
+                            data-target="dual-devices-submenu" style="padding-left: 2rem;">
+                            <span>Dual Devices</span>
+                            <i class="mobile-dropdown-icon fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                        <div id="dual-devices-submenu" class="mobile-nested-submenu">
+                            <a href="#" class="mobile-nested-item">24H Trial</a>
+                            <a href="#" class="mobile-nested-item">1 Month</a>
+                            <a href="#" class="mobile-nested-item">3 Months</a>
+                            <a href="#" class="mobile-nested-item">6 Months</a>
+                            <a href="#" class="mobile-nested-item">1 Year</a>
+                            <a href="#" class="mobile-nested-item">2 Years</a>
+                        </div>
+                    </div>
+
+                    <!-- Family Access -->
+                    <div class="py-2">
+                        <button class="mobile-dropdown-btn text-base font-medium text-gray-600"
+                            data-target="family-access-submenu" style="padding-left: 2rem;">
+                            <span>Family Access</span>
+                            <i class="mobile-dropdown-icon fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                        <div id="family-access-submenu" class="mobile-nested-submenu">
+                            <a href="#" class="mobile-nested-item">24H Trial</a>
+                            <a href="#" class="mobile-nested-item">3 Months</a>
+                            <a href="#" class="mobile-nested-item">6 Months</a>
+                            <a href="#" class="mobile-nested-item">1 Year</a>
+                            <a href="#" class="mobile-nested-item">2 Years</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="mobile-submenu-item">Reseller</a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-item">
+                <a href="tutorials.html" class="mobile-menu-link">Tutorials</a>
+            </div>
+
+            <div class="mobile-menu-item">
+                <a href="blog.html" class="mobile-menu-link">Blog</a>
+            </div>
+
+            <div class="mobile-menu-item">
+                <a href="contact.html" class="mobile-menu-link">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section id="contact-support" class="bg-gray-50/50 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div
+                class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-16 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+
+                <!-- Left Column: Information -->
+                <div class="lg:pt-4">
+                    <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">We're Here to Help, 24/7
+                    </h2>
+                    <p class="mt-6 text-xl leading-8 text-gray-600">
+                        Have questions about your IPTV service or need technical assistance? Our expert support team is
+                        available around the clock to provide swift and helpful solutions.
+                    </p>
+                    <div class="mt-8 flex items-center gap-x-4">
+                        <h3 class="flex-none text-base font-semibold leading-7 text-emerald-600">Contact Channels</h3>
+                        <div class="h-px flex-auto bg-gray-200"></div>
+                    </div>
+                    <p class="mt-6 text-base leading-7 text-gray-600">
+                        Choose your preferred way to get in touch. For the fastest resolution, please have your
+                        subscription details ready.
+                    </p>
+                    <div
+                        class="mt-6 flex items-center gap-x-3 rounded-md bg-emerald-50 p-3 text-sm font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
+                        <i class="fa-solid fa-clock h-5 w-5 flex-none text-emerald-600"></i>
+                        <span>Average response time: <strong class="font-semibold">under 5 minutes</strong></span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Methods -->
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-1">
+
+                    <!-- Support Ticket -->
+                    <a href="#"
+                        class="relative block rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5 transition-shadow hover:shadow-2xl">
+                        <div class="flex items-center gap-x-4">
+                            <div
+                                class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-emerald-500 text-white">
+                                <i class="fa-solid fa-ticket-simple text-2xl"></i>
+                            </div>
+                            <div class="flex-auto">
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Open a Support Ticket</h3>
+                                <p class="mt-1 text-base leading-7 text-gray-600">Best for detailed technical issues.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="#"
+                        class="relative block rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5 transition-shadow hover:shadow-2xl">
+                        <div class="flex items-center gap-x-4">
+                            <div
+                                class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-emerald-500 text-white">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            </div>
+                            <div class="flex-auto">
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">WhatsApp Support</h3>
+                                <p class="mt-1 text-base leading-7 text-gray-600">Chat with us live for quick questions.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="#"
+                        class="relative block rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5 transition-shadow hover:shadow-2xl">
+                        <div class="flex items-center gap-x-4">
+                            <div
+                                class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-emerald-500 text-white">
+                                <i class="fa-brands fa-telegram text-2xl"></i>
+                            </div>
+                            <div class="flex-auto">
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Telegram Support</h3>
+                                <p class="mt-1 text-base leading-7 text-gray-600">Get assistance via the Telegram app.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:support@evestv.com"
+                        class="relative block rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5 transition-shadow hover:shadow-2xl">
+                        <div class="flex items-center gap-x-4">
+                            <div
+                                class="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-emerald-500 text-white">
+                                <i class="fa-solid fa-envelope-open-text text-2xl"></i>
+                            </div>
+                            <div class="flex-auto">
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900">Email Us</h3>
+                                <p class="mt-1 text-base leading-7 text-gray-600">support@evestv.com</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-topics" class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-4xl text-center">
+                <h2 class="text-base font-semibold leading-7 text-gray-600 uppercase tracking-wider">Just Contact Us
+                </h2>
+                <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">How can we help you today?
+                </p>
+            </div>
+            <div
+                class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-center sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+
+                <!-- Topic 1: General Support -->
+                <div>
+                    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-600">
+                        <i class="fa-solid fa-question text-4xl text-white"></i>
+                    </div>
+                    <h3 class="mt-6 text-lg font-semibold leading-8 text-gray-900">General Support</h3>
+                    <p class="mt-2 text-base leading-7 text-gray-600">
+                        Questions about our service? Need help choosing the right plan? We've got answers.
+                    </p>
+                </div>
+
+                <!-- Topic 2: Channel Support -->
+                <div>
+                    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-600">
+                        <i class="fa-solid fa-desktop text-4xl text-white"></i>
+                    </div>
+                    <h3 class="mt-6 text-lg font-semibold leading-8 text-gray-900">Channel Support</h3>
+                    <p class="mt-2 text-base leading-7 text-gray-600">
+                        Report channel issues or make content requests. We're always improving our lineup.
+                    </p>
+                </div>
+
+                <!-- Topic 3: PayPal -->
+                <div>
+                    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-600">
+                        <i class="fa-regular fa-credit-card text-4xl text-emerald-500"></i>
+                    </div>
+                    <h3 class="mt-6 text-lg font-semibold leading-8 text-gray-900">PayPal</h3>
+                    <p class="mt-2 text-base leading-7 text-gray-600">
+                        Sort out payment issues, update billing info, or check your subscription status.
+                    </p>
+                </div>
+
+                <!-- Topic 4: Technical Setup -->
+                <div>
+                    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-600">
+                        <i class="fa-solid fa-gear text-4xl text-white"></i>
+                    </div>
+                    <h3 class="mt-6 text-lg font-semibold leading-8 text-gray-900">Technical Setup</h3>
+                    <p class="mt-2 text-base leading-7 text-gray-600">
+                        Get help with Firestick, IPTV Smarters Pro, or any device setup questions.
+                    </p>
+                </div>
+
+                <!-- Topic 5: Account Management -->
+                <div>
+                    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-600">
+                        <i class="fa-solid fa-user text-4xl text-white"></i>
+                    </div>
+                    <h3 class="mt-6 text-lg font-semibold leading-8 text-gray-900">Account Management</h3>
+                    <p class="mt-2 text-base leading-7 text-gray-600">
+                        Manage your subscription, upgrade your plan, or update your details.
+                    </p>
+                </div>
+
+                <!-- Topic 6: Quick Questions -->
+                <div>
+                    <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-600">
+                        <i class="fa-solid fa-bolt-lightning text-4xl text-white"></i>
+                    </div>
+                    <h3 class="mt-6 text-lg font-semibold leading-8 text-gray-900">Quick Questions</h3>
+                    <p class="mt-2 text-base leading-7 text-gray-600">
+                        Need a fast answer? Our live chat team typically responds in under 5 minutes.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="faq-section" class="bg-gray-50 py-16 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <!-- Title and Description -->
+            <div class="gap-25 mx-auto max-w-4xl text-left">
+                <h2 class="text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    Everything You
+                    <span class=" text-emerald-500">Need to Know</span>
+                </h2>
+                <p class="mt-4 text-lg leading-8 text-gray-600">
+                    From device compatibility to streaming quality, we've got all your questions covered about our
+                    premium IPTV service with 30,000+ channels and buffer-free HD streaming.
+                </p>
+            </div>
+
+            <!-- Accordion -->
+            <div class="mx-auto mt-16 max-w-4xl">
+                <div class="space-y-4">
+                    <!-- Accordion Item 1 -->
+                    <div class="accordion-item rounded-2xl bg-emerald-100/50 p-6">
+                        <button class="accordion-trigger flex w-full items-center justify-between text-left">
+                            <span class="text-lg font-semibold text-gray-900">What exactly is included in my IPTV
+                                subscription?</span>
+                            <i
+                                class="accordion-icon fa-solid fa-chevron-up flex-shrink-0 text-gray-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-panel overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="mt-4 text-base text-gray-600">
+                                Your subscription unlocks our entire streaming universe: 30,000+ live channels in
+                                crystal-clear HD & 4K quality, plus a massive library of 157,000+ on-demand movies and
+                                shows. Catch everything from United Kingdom sports to international entertainment,
+                                including premium channels, PPV events, and exclusive content. All channels stream
+                                buffer-free through our stable IPTV service.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 2 -->
+                    <div class="accordion-item rounded-2xl bg-emerald-100/50 p-6">
+                        <button class="accordion-trigger flex w-full items-center justify-between text-left">
+                            <span class="text-lg font-semibold text-gray-900">Which devices work with your IPTV
+                                service?</span>
+                            <i
+                                class="accordion-icon fa-solid fa-chevron-down flex-shrink-0 text-gray-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-panel overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="mt-4 text-base text-gray-600">This is the answer for the second question.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 3 -->
+                    <div class="accordion-item rounded-2xl bg-emerald-100/50 p-6">
+                        <button class="accordion-trigger flex w-full items-center justify-between text-left">
+                            <span class="text-lg font-semibold text-gray-900">Is your IPTV service really stable? What
+                                about buffering?</span>
+                            <i
+                                class="accordion-icon fa-solid fa-chevron-down flex-shrink-0 text-gray-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-panel overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="mt-4 text-base text-gray-600">This is the answer for the third question.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 4 -->
+                    <div class="accordion-item rounded-2xl bg-emerald-100/50 p-6">
+                        <button class="accordion-trigger flex w-full items-center justify-between text-left">
+                            <span class="text-lg font-semibold text-gray-900">How quick is the setup process?</span>
+                            <i
+                                class="accordion-icon fa-solid fa-chevron-down flex-shrink-0 text-gray-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-panel overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="mt-4 text-base text-gray-600">This is the answer for the fourth question.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 5 -->
+                    <div class="accordion-item rounded-2xl bg-emerald-100/50 p-6">
+                        <button class="accordion-trigger flex w-full items-center justify-between text-left">
+                            <span class="text-lg font-semibold text-gray-900">What happens if I need help or run into
+                                issues?</span>
+                            <i
+                                class="accordion-icon fa-solid fa-chevron-down flex-shrink-0 text-gray-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-panel overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="mt-4 text-base text-gray-600">This is the answer for the fifth question.</p>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 6 -->
+                    <div class="accordion-item rounded-2xl bg-emerald-100/50 p-6">
+                        <button class="accordion-trigger flex w-full items-center justify-between text-left">
+                            <span class="text-lg font-semibold text-gray-900">Can I test the service before committing
+                                to a longer plan?</span>
+                            <i
+                                class="accordion-icon fa-solid fa-chevron-down flex-shrink-0 text-gray-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-panel overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="mt-4 text-base text-gray-600">This is the answer for the sixth question.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="eves-tv-footer" class="bg-teal-50">
+        <div class="mx-auto max-w-screen-xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
+
+                <!-- Logo and Description -->
+                <div class="lg:col-span-4">
+                    <a href="#">
+                        <img class="h-8"
+                            src="https://assets.website-files.com/64b1457340618825841e4115/64b1457340618825841e411e_vestv-logo.svg"
+                            alt="EVESTV Logo">
+                    </a>
+                    <p class="mt-6 max-w-md text-base leading-relaxed text-gray-600">
+                        Experience premium entertainment with EVESTV. 30k+ channels in 4K quality, including Sports,
+                        international content, and PPV events.
+                    </p>
+                </div>
+
+                <!-- Links Grid -->
+                <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-5">
+                    <div>
+                        <p class="font-semibold text-gray-500">Quick Links</p>
+                        <ul class="mt-6 space-y-4 text-sm">
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Home</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Packages</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Products</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Start trial</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-500">Support</p>
+                        <ul class="mt-6 space-y-4 text-sm">
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">About us</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Help</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Installation
+                                    Guide</a></li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-500">Legal</p>
+                        <ul class="mt-6 space-y-4 text-sm">
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Privacy Policy</a>
+                            </li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Refund Policy</a>
+                            </li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Cookie Policy</a>
+                            </li>
+                            <li><a href="#" class="text-gray-800 transition hover:text-emerald-500">Terms of use</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Subscribe Form -->
+                <div class="lg:col-span-3">
+                    <form class="space-y-4">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email"
+                            class="w-full rounded-lg border-gray-200 bg-white p-3 text-sm shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
+                        <button type="submit"
+                            class="w-full rounded-lg bg-emerald-500 px-5 py-3 font-medium text-white transition hover:bg-emerald-600">
+                            Subscribe
+                        </button>
+                    </form>
+                    <div class="mt-4 flex justify-start space-x-5 text-gray-700">
+                        <a href="#" class="transition hover:text-emerald-500"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i
+                                class="fa-brands fa-reddit-alien"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="transition hover:text-emerald-500"><i
+                                class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    © 2025 <a href="#" class="text-emerald-500 transition hover:text-emerald-600">EVESTV</a>. All rights
+                    reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    const isOpen = mobileMenu.classList.contains('open');
+
+                    if (isOpen) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                });
+            }
+
+            // Mobile dropdown toggles
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const submenu = document.getElementById(targetId);
+                    const icon = this.querySelector('.mobile-dropdown-icon');
+
+                    if (submenu && icon) {
+                        const isOpen = submenu.classList.contains('open');
+
+                        if (isOpen) {
+                            submenu.classList.remove('open');
+                            this.classList.remove('active');
+                            this.setAttribute('aria-expanded', 'false');
+                        } else {
+                            submenu.classList.add('open');
+                            this.classList.add('active');
+                            this.setAttribute('aria-expanded', 'true');
+                        }
+                    }
+                });
+            });
+
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (mobileMenuToggle && mobileMenu &&
+                    !mobileMenuToggle.contains(e.target) &&
+                    !mobileMenu.contains(e.target) &&
+                    mobileMenu.classList.contains('open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            function openMobileMenu() {
+                if (mobileMenu && mobileMenuToggle) {
+                    mobileMenu.classList.add('open');
+                    mobileMenuToggle.classList.add('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeMobileMenu() {
+                if (mobileMenu && mobileMenuToggle) {
+                    mobileMenu.classList.remove('open');
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+
+                    // Close all submenus
+                    document.querySelectorAll('.mobile-submenu, .mobile-nested-submenu').forEach(submenu => {
+                        submenu.classList.remove('open');
+                    });
+                    document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-expanded', 'false');
+                    });
+                }
+            }
+
+            // Desktop dropdown accessibility
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                const button = container.querySelector('.nav-link');
+                const menu = container.querySelector('.dropdown-menu');
+
+                if (button && menu) {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                    });
+
+                    button.addEventListener('keydown', function (e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                            this.setAttribute('aria-expanded', !isExpanded);
+                        }
+                    });
+                }
+            });
+
+            // Plan tabs functionality
+            const tabs = document.querySelectorAll('.plan-tab-button');
+            const planContents = {
+                single: document.getElementById('single-plans'),
+                dual: document.getElementById('dual-plans'),
+                family: document.getElementById('family-plans')
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Deactivate all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active-tab', 'bg-emerald-500', 'text-white');
+                        t.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+
+                    // Activate clicked tab
+                    tab.classList.add('active-tab', 'bg-emerald-500', 'text-white');
+                    tab.classList.remove('bg-gray-200', 'text-gray-700');
+
+                    const planToShow = tab.dataset.plan;
+
+                    // Hide all plan contents
+                    Object.values(planContents).forEach(content => {
+                        if (content) {
+                            content.style.display = 'none';
+                        }
+                    });
+
+                    // Show the selected plan content
+                    if (planContents[planToShow]) {
+                        planContents[planToShow].style.display = 'grid';
+                    }
+                });
+            });
+
+            // Logo scrolling functionality
+            const logosData = [
+                { src: '../../public/img/icons-animation/mag.svg', alt: 'Xbox' },
+                { src: '../../public/img/icons-animation/samsungsmarttv.svg', alt: 'Kodi' },
+                { src: '../../public/img/icons-animation/firetv.svg', alt: 'Linux' },
+                { src: '../../public/img/icons-animation/apple.svg', alt: 'Windows' },
+                { src: '../../public/img/icons-animation/tv.svg', alt: 'IPTV Smarters' },
+                { src: '../../public/img/icons-animation/video.svg', alt: 'TiviMate' },
+                { src: '../../public/img/icons-animation/android.svg', alt: 'Android TV' },
+                { src: '../../public/img/icons-animation/firetv.svg', alt: 'Router' },
+                { src: '../../public/img/icons-animation/samsung.svg', alt: 'Samsung' },
+                { src: '../../public/img/icons-animation/appletv.svg', alt: 'Apple TV' },
+                { src: '../../public/img/icons-animation/mag.svg', alt: 'MAG' },
+                { src: '../../public/img/icons-animation/samsungsmarttv.svg', alt: 'Samsung Smart TV' },
+                { src: '../../public/img/icons-animation/LGtv.svg', alt: 'LG' },
+                { src: '../../public/img/icons-animation/roki.svg', alt: 'Roku' },
+                { src: '../../public/img/icons-animation/apple.svg', alt: 'Apple' },
+                { src: '../../public/img/icons-animation/nvidia.svg', alt: 'Nvidia' }
+            ];
+
+            const track = document.getElementById('logo-track-container');
+            if (track) {
+                // Duplicate logos to ensure the track is always full and animation is seamless
+                const allLogos = [...logosData, ...logosData];
+
+                allLogos.forEach(logo => {
+                    const img = document.createElement('img');
+                    img.src = logo.src;
+                    img.alt = logo.alt;
+                    img.className = 'logo-item';
+                    track.appendChild(img);
+                });
+
+                const animationDuration = 500; // Must match CSS transition duration
+                const pauseDuration = 500;     // The pause between slides
+
+                function startScrolling() {
+                    const firstItem = track.querySelector('.logo-item');
+                    if (!firstItem) return;
+
+                    // 1. Start the slide animation
+                    const itemWidth = firstItem.offsetWidth + parseFloat(getComputedStyle(firstItem).marginRight);
+                    track.style.transform = `translateX(-${itemWidth}px)`;
+
+                    // 2. After the slide is finished, reset the state
+                    setTimeout(() => {
+                        // No transition for the reset/reorder
+                        track.style.transition = 'none';
+                        // Move the first (now hidden) item to the end
+                        track.appendChild(firstItem);
+                        // Reset the track position instantly
+                        track.style.transform = 'translateX(0)';
+                        // Force a reflow to apply the reset immediately before re-enabling transition
+                        track.offsetHeight;
+                        // Re-enable the transition for the next slide
+                        track.style.transition = 'transform 0.5s ease-in-out';
+                    }, animationDuration);
+                }
+
+                // Start the animation loop after an initial pause
+                setInterval(startScrolling, animationDuration + pauseDuration);
+            }
+
+            // FAQ Accordion functionality (for #faq-section if it exists)
+            const accordionItems = document.querySelectorAll('#faq-section .accordion-item');
+
+            if (accordionItems.length > 0) {
+                // Function to close all items
+                const closeAllItems = () => {
+                    accordionItems.forEach(item => {
+                        const panel = item.querySelector('.accordion-panel');
+                        const icon = item.querySelector('.accordion-icon');
+                        if (panel) panel.style.maxHeight = null;
+                        if (icon) {
+                            icon.classList.remove('fa-chevron-up');
+                            icon.classList.add('fa-chevron-down');
+                            icon.classList.remove('open');
+                        }
+                    });
+                };
+
+                // Set the first item to be open by default
+                const firstItem = accordionItems[0];
+                if (firstItem) {
+                    const firstPanel = firstItem.querySelector('.accordion-panel');
+                    const firstIcon = firstItem.querySelector('.accordion-icon');
+                    if (firstPanel) firstPanel.style.maxHeight = firstPanel.scrollHeight + 'px';
+                    if (firstIcon) {
+                        firstIcon.classList.remove('fa-chevron-down');
+                        firstIcon.classList.add('fa-chevron-up');
+                        firstIcon.classList.add('open');
+                    }
+                }
+
+                accordionItems.forEach(item => {
+                    const trigger = item.querySelector('.accordion-trigger');
+                    const panel = item.querySelector('.accordion-panel');
+                    const icon = item.querySelector('.accordion-icon');
+
+                    if (trigger && panel && icon) {
+                        trigger.addEventListener('click', () => {
+                            const isCurrentlyOpen = panel.style.maxHeight && panel.style.maxHeight !== '0px';
+
+                            // Always close all items first
+                            closeAllItems();
+
+                            // If the clicked item was not open, open it
+                            if (!isCurrentlyOpen) {
+                                panel.style.maxHeight = panel.scrollHeight + 'px';
+                                icon.classList.remove('fa-chevron-down');
+                                icon.classList.add('fa-chevron-up');
+                                icon.classList.add('open');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // FAQ Reseller Section functionality (corrected version)
+            const faqItems = document.querySelectorAll('#faq-reseller-section .faq-item');
+
+            faqItems.forEach(item => {
+                const header = item.querySelector('.faq-header');
+                const content = item.querySelector('.faq-content');
+                const icon = item.querySelector('.faq-icon');
+
+                if (header && content && icon) {
+                    header.addEventListener('click', function () {
+                        const isExpanded = item.dataset.expanded === 'true';
+
+                        if (isExpanded) {
+                            // Close this item
+                            content.classList.add('hidden');
+                            icon.textContent = '+';
+                            item.dataset.expanded = 'false';
+
+                            // Change colors to yellow
+                            header.classList.remove('bg-green-500');
+                            header.classList.add('bg-yellow-400');
+                            content.classList.remove('bg-green-500');
+                            content.classList.add('bg-yellow-400');
+
+                            // Change text color
+                            const h3 = header.querySelector('h3');
+                            const p = content.querySelector('p');
+
+                            if (h3) {
+                                h3.classList.remove('text-white');
+                                h3.classList.add('text-black');
+                            }
+
+                            icon.classList.remove('text-white');
+                            icon.classList.add('text-black');
+
+                            if (p) {
+                                p.classList.remove('text-white');
+                                p.classList.add('text-black');
+                            }
+                        } else {
+                            // Close all other items first
+                            faqItems.forEach(otherItem => {
+                                if (otherItem !== item && otherItem.dataset.expanded === 'true') {
+                                    const otherContent = otherItem.querySelector('.faq-content');
+                                    const otherIcon = otherItem.querySelector('.faq-icon');
+                                    const otherHeader = otherItem.querySelector('.faq-header');
+
+                                    if (otherContent && otherIcon && otherHeader) {
+                                        otherContent.classList.add('hidden');
+                                        otherIcon.textContent = '+';
+                                        otherItem.dataset.expanded = 'false';
+
+                                        // Change to yellow
+                                        otherHeader.classList.remove('bg-green-500');
+                                        otherHeader.classList.add('bg-yellow-400');
+                                        otherContent.classList.remove('bg-green-500');
+                                        otherContent.classList.add('bg-yellow-400');
+
+                                        // Change text color
+                                        const otherH3 = otherHeader.querySelector('h3');
+                                        const otherP = otherContent.querySelector('p');
+
+                                        if (otherH3) {
+                                            otherH3.classList.remove('text-white');
+                                            otherH3.classList.add('text-black');
+                                        }
+
+                                        otherIcon.classList.remove('text-white');
+                                        otherIcon.classList.add('text-black');
+
+                                        if (otherP) {
+                                            otherP.classList.remove('text-white');
+                                            otherP.classList.add('text-black');
+                                        }
+                                    }
+                                }
+                            });
+
+                            // Open this item
+                            content.classList.remove('hidden');
+                            icon.textContent = '−';
+                            item.dataset.expanded = 'true';
+
+                            // Change colors to green
+                            header.classList.remove('bg-yellow-400');
+                            header.classList.add('bg-green-500');
+                            content.classList.remove('bg-yellow-400');
+                            content.classList.add('bg-green-500');
+
+                            // Change text color
+                            const h3 = header.querySelector('h3');
+                            const p = content.querySelector('p');
+
+                            if (h3) {
+                                h3.classList.remove('text-black');
+                                h3.classList.add('text-white');
+                            }
+
+                            icon.classList.remove('text-black');
+                            icon.classList.add('text-white');
+
+                            if (p) {
+                                p.classList.remove('text-black');
+                                p.classList.add('text-white');
+                            }
+                        }
+                    });
+                }
+            });
+
+
+            const planToggle = document.getElementById('plan-toggle');
+            if (!planToggle) return;
+
+            const buttons = planToggle.querySelectorAll('.plan-button');
+            const planSets = document.querySelectorAll('.plan-set');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const plan = this.getAttribute('data-plan');
+
+                    // Update button styles
+                    buttons.forEach(btn => {
+                        btn.classList.remove('bg-emerald-600', 'text-white');
+                        btn.classList.add('bg-transparent', 'text-gray-700');
+                    });
+                    this.classList.add('bg-emerald-600', 'text-white');
+                    this.classList.remove('bg-transparent', 'text-gray-700');
+
+                    // Update visible plan set
+                    planSets.forEach(set => {
+                        if (set.id === `${plan}-device-plans`) {
+                            set.classList.remove('hidden');
+                        } else {
+                            set.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
